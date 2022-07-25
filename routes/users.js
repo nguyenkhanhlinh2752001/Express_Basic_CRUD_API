@@ -1,19 +1,8 @@
 import express from 'express'
+import { v4 as uuidv4 } from 'uuid'
 
 const router = express.Router()
-const users = [{
-        id: 0,
-        productName: "Fresh Avocados",
-        price: 6.50,
-        from: "Spain",
-    },
-    {
-        id: 0,
-        productName: "Fresh Avocados",
-        price: 6.50,
-        from: "Spain",
-    }
-]
+let users = []
 
 // all routes in here start with /users
 router.get('/', (req, res) => {
@@ -21,6 +10,22 @@ router.get('/', (req, res) => {
     res.send(users)
 })
 
-router.post()
+router.post('/', (req, res) => {
+    const user = req.body
+    users.push({...user, id: uuidv4() })
+    res.send(`User with name ${user.name} added to DB`)
+})
+
+router.get('/:id', (req, res) => {
+    const { id } = req.params
+    const foundUser = users.find((user) => user.id === id)
+    res.send(foundUser)
+})
+
+router.delete('/:id', (req, res) => {
+    const { id } = req.params
+    users = users.filter((user) => user.id = !id)
+    res.send(`User with name ${id} removed from DB`)
+})
 
 export default router
