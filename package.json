@@ -1,0 +1,26 @@
+{
+    "name": "node_express_api",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "dependencies": {
+        "express": "4.18.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.19"
+    },
+    "scripts": {
+        "start": "nodemon index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nguyenkhanhlinh2752001/Express_Basic_CRUD_API.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/nguyenkhanhlinh2752001/Express_Basic_CRUD_API/issues"
+    },
+    "homepage": "https://github.com/nguyenkhanhlinh2752001/Express_Basic_CRUD_API#readme"
+}
